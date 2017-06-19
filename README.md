@@ -7,4 +7,6 @@ Adicionar a linha abaixo no arquivo aplication.properties se for executar o proj
 
 Com essa configuração o Framework irá criar automaticamente a tabela no banco de dados sempre que o projeto for executado.
 
+```
 spring.jpa.hibernate.ddl-auto=create-drop
+```
