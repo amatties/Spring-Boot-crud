@@ -68,10 +68,21 @@ Só está disponível na língua inglesa.
  ***
  
  ## Sobre o projeto aqui apresentado
+ 
 
 ### Link para o vídeo da criação do projeto 
 
 https://www.youtube.com/watch?v=027GKlqcQ_Y
+  
+  
+  
+
+### Dependências utilizadas
+
+**|Web|**    **|JPA|**    **|DevTools|**    **|Thymeleaf|**    **|MySQL|**
+
+
+
 
 ### Alguns detalhes para execução
 
