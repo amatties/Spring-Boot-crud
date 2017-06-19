@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head> 
+        <meta charset="UTF-8"/> 
+        <meta name="viewport" content="width=device-width" />
+        <title>Lista de Alunos</title>
+       
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+       
+    </head>
+    <body>
+        <div class="panel panel-default" style="margin: 10px">
+            <div class="panel-heading"> 
+                <h1 class="panel-title">Lista de Alunos</h1> 
+            </div>
+
+            <div class="panel-body">
+                <form class="form-inline" method="POST" style="margin: 20px 0"  th:object="${aluno}" th:action="@{/alunos}" > 
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Nome" th:field="*{nome}"/>
+                        <input type="text" class="form-control" placeholder="Nota" th:field="*{nota}"/> 
+                        <button type="submit" class="btn btn-primary">Adicionar</button> 
+                    </div> 
+                </form> 
+                <table class="table"> 
+                    <thead>
+                        <tr> 
+                            <th>Id</th>
+                            <th>Nome</th> 
+                            <th>Nota</th> 
+                        </tr> 
+                    </thead> 
+                    <tbody> 
+                      
+                        <tr th:each="aluno : ${alunos}"> 
+                              <form class="form-inline" method="POST" style="margin: 20px 0"  th:object="${aluno}" th:action="@{/tester/}+${aluno.id}" >
+                              <td th:text="${aluno.id}"  </td>
+                            <td th:text="${aluno.nome}"></td>
+                            <td th:text="${aluno.nota}"></td>
+                           <td><a th:href="@{removeAluno?id=}+${aluno.id}">Remover</a></td>
+                           <td><a th:href="@{editaAluno?id=}+${aluno.id}">Edita</a></td>
+                          
+                               </form> 
+                        </tr> 
+                    </tbody> 
+                </table> 
+            </div> 
+        </div> 
+    </body> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body> 
+</html> 

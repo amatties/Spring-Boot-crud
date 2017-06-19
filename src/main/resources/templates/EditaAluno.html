@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head> 
+        <meta charset="UTF-8"/> 
+        <meta name="viewport" content="width=device-width" />
+        <title>Edição de Alunos</title>
+       
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+       
+    </head>
+    <body>
+        <div class="panel panel-default" style="margin: 10px">
+            <div class="panel-heading"> 
+                <h1 class="panel-title">Edição de Alunos</h1> 
+            </div>
+
+            <div class="panel-body">
+                <form class="form-inline" method="POST" style="margin: 20px 0"  th:object="${aluno}" th:action="@{/alteraAluno}" > 
+                    <div class="form-group">
+                        <div class="invisible">
+                         <input type="text" class="form-control" th:value="${alunos.id}" id="id" name="id"/>   
+                        </div>
+                     
+                        <input type="text" class="form-control" th:value="${alunos.nome}" id="nome" name="nome"/>
+                        <input type="text" class="form-control" th:value="${alunos.nota}" id="nota" name="nota"/>
+                       
+                        
+                        <button type="submit" class="btn btn-primary">Salvar</button> 
+                    </div> 
+                </form> 
+                
+            </div> 
+        </div> 
+    </body> 
+
+</html> 
